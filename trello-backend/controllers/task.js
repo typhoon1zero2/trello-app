@@ -10,6 +10,21 @@ const Task = require('../models/Task');
 */
 
 /*
+    READ ROUTE
+*/
+router.get('/', (req, res) => {
+    Task.find({}, (err, foundTask) => {
+        if(!err) {
+            res.status(200).json(foundTask);
+        }else {
+            res.status(400).json(err);
+        }
+    });
+});
+
+
+
+/*
     SHOW PAGE
 */
 router.get('/:id', (req, res) => {
