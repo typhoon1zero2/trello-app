@@ -26,13 +26,21 @@ router.get('/', (req, res) => {
 /*
     TABLE ROUTE
 */
-// router.get('/table', (req, res) => {
-//     Task.find({} (err, foundTask) => {
-//         if(!err) {
-//             const formattedData = foundTask.reduce
-//         }
-//     })
-// })
+router.get('/table', (req, res) => {
+    Task.find({}, (err, foundTask) => {
+        if (!err) {
+            const formattedData = foundTask.reduce((accumulator, item) => {
+                accumulator[item.status] = accumulator[item.status]
+                ? [...accumulator[item.status], item]
+                : [item];
+                return accumulator;
+            }, {});
+            res.status(200).json(formattedData);
+        } else {
+            res.status(400).json(err);
+        }
+    });
+});
 
 
 /*
