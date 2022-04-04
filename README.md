@@ -1,4 +1,3 @@
-# trello-Mockup-app
 
 # Trello Mock Backend API
 
@@ -17,7 +16,7 @@ This Express server will be the same thing you all have been doing but instead o
 
 ## Getting Started
 
-First we will open up our terminal into the `software_classwork` folder. Once inside that folder run these commands:
+First we will created folder. Once inside that folder run these commands:
 
 ```
 mkdir office_hour
@@ -60,7 +59,7 @@ touch models/Task.js && touch models/connection.js
 
 ## <u>Server</u>
 
-### - First thing we always do, bring in our imports and create the nessecary variables for Express
+### - First thing we always do, bring in our imports and create the necessary variables for Express
 
 - During this activity will we be separating our concerns to keep the server file neat.
 
@@ -74,8 +73,8 @@ const PORT = process.env.PORT || 3000;
 
 ### - Middleware Next!
 
-- expess.json() allows our server to parse json
-- we will discuss cors. [More Info](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+- express.json() allows our server to parse json
+- [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 
 ```js
 app.use(cors());
@@ -162,7 +161,7 @@ Since we are not serving any files we will not not certain routes like Edit, New
 
 - Read
 
-  - GET `/` route that finds and returns everyhting in the Task database
+  - GET `/` route that finds and returns everything in the Task database
   - GET `/table` route that will filter our tasks by their status and return the data in a neat object. (This route is key to our frontend functionality.)
   - GET `/:id` route that finds a task based on id and returns the found task
 
@@ -177,3 +176,5 @@ Since we are not serving any files we will not not certain routes like Edit, New
 
 ## All Done!
 ## Credit to **JOSHUA MILLER** for THIS TRAINING
+
+## NEXT STEP CLIENT (FRONT-END)

@@ -4,12 +4,12 @@
 const express = require('express');
 const router = express.Router();
 const Task = require('../models/Task');
-
+/*****************************************************/
 /*
     C-R-U-D
     Create, Read, Update, Delete
 */
-
+/****************************************************/
 /*
     READ ROUTE
 */
@@ -41,8 +41,6 @@ router.get('/table', (req, res) => {
         }
     });
 });
-
-
 /*
     CREATE ROUTE
 */
