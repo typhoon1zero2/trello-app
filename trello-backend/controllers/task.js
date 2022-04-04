@@ -57,6 +57,24 @@ router.post('/', (req, res) => {
         }
     });
 });
+/*
+    UPDATED ROUTE
+*/
+router.put('/:id', (req, res) => {
+    const { body } = req;
+    Task.findByIdAndUpdate(
+        req.params.id,
+        body,
+        { new : true },
+        (err, updatedTask) =>{
+            if(!err) {
+                res.status(200).json(updatedTask);
+            } else {
+                res.status(400).send(err);
+            }
+        }
+    );
+});
 
 
 /*
