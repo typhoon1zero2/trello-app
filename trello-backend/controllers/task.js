@@ -23,8 +23,34 @@ router.get('/', (req, res) => {
     });
 });
 
+/*
+    TABLE ROUTE
+*/
+// router.get('/table', (req, res) => {
+//     Task.find({} (err, foundTask) => {
+//         if(!err) {
+//             const formattedData = foundTask.reduce
+//         }
+//     })
+// })
 
- 
+
+/*
+    CREATE ROUTE
+*/
+router.post('/', (req, res) => {
+    const { body }= req;
+
+    Task.create(body, (err, createdTask) => {
+        if (!err){
+            res.status(200).json({ message: 'All Good!', createdTask: createdTask });
+        }else {
+            res.status(400).json(err);
+        }
+    });
+});
+
+
 /*
     SHOW PAGE
 */
