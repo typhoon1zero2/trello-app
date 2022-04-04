@@ -75,7 +75,18 @@ router.put('/:id', (req, res) => {
         }
     );
 });
-
+/*
+    DELETE ROUTE
+*/  
+router.delete('/:id', (req, res) => {
+    Task.findByIdAndDelete(req.params.id, (err) =>{
+        if(!err) {
+            res.status(200).json({ message: "Deleted This Task" });
+        } else {
+            res.status(400).send(err);
+        }
+    });
+});
 
 /*
     SHOW PAGE
