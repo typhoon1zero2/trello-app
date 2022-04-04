@@ -6,6 +6,7 @@ const router = express.Router();
 const Task = require('../models/Task');
 
 /*
+    C-R-U-D
     Create, Read, Update, Delete
 */
 
@@ -23,7 +24,7 @@ router.get('/', (req, res) => {
 });
 
 
-
+ 
 /*
     SHOW PAGE
 */
